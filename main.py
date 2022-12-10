@@ -19,7 +19,7 @@ hard_earned_money = 0.0
 dividends_earned = 0.0
 dividends_received_times = 0
 dividends_high = 0.0
-dividends_low = 0.0
+dividends_low = 100.0
 dividends_average = 0.0
 
 last_shares_value = 0.0
@@ -73,7 +73,6 @@ def process(row, dividends):
     # look if it is time for you to receive your dividends
     try:
         dividends_perc =  float(dividends[str(current_day.__hash__())]) / 100 # get the dividends percentage
-
         if dividends_high < dividends_perc:
             dividends_high = dividends_perc
         if dividends_low > dividends_perc:
